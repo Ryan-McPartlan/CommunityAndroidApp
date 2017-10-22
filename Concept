@@ -1,0 +1,77 @@
+Abstract
+This app will facilitate communities in identifying and solving concerns in their area, or organizing public community events. Users can bring attention to a concern or event by placing a pin on a map, and other users can interact with the pin to assist, attend, or learn more.
+
+Overview
+A Concern is a problem a user notices: “There is a lot of garbage in this park” for example. A user can place a pin on the map, representing a concern. Users can comment on the concern and “upvote” it to help draw attention to it. Conversely, users can “downvote” a concern if it has been resolved, is a duplicate of another concern already on the map, or if it is spam/unnecessary.
+Users will also be able to “follow” a concern, which will add it to their personal list, and give them notifications when other users flag it as resolved, or if other users take any of the actions described below.
+
+An event can be attached to a concern, and is a specific timeframe that users will meet up and attempt to address the concern. For example, a “Park clean up” event will attempt to address the previous example. Users will have a period of time after the event ends to rate the event, these ratings will reflect on the organizers profiles, and make it more likely that users will attend their events in the futures. Users may also be able to rate other users who are “signed up” for the event. May add option to sign up “anonymously” without your account being visible. You will also be able to confirm that you attended the event during this period. Organizers can set a participation range on the event, you must be in this range to claim that you participated. Global or very large range events will have a much lower value, as it is easier to falsify participation, (and requires less effort if you can contribute from home, anyway).
+
+Some events might be recurring, such as monthly park clean ups or weekly soup kitchens, in which case the event will be archived, and a new identical copy of the event will be made with the new time.
+
+Events also may not rise from concerns, and should not always be attached to one. For this to happen, the event organizer creates the event themselves while dropping the pin, and the pin will link directly to the event instead of to an initial concern page. In this case, the user has full control over that pin. In the case of a standalone event, like “Library book drive” or “Yard sale here!”, the pin will disappear after the event. 
+
+Many events will likely be hosted by organizations, like the BSA, Yonkers Greenworks, and Public Libraries. An organizational account will have everything unlocked, and may have some small fee to create an account, or maybe run off a subscription in the future. 
+Concerns will not all be best addressed by events. Things like potholes, public school problems, or political issues, need to be handled by government or other authorities. In addition, users may want to help out with a concern without attending an event. For these reasons, users can also create and attach “Actions” that they recommend other users take to an attempt to address a concern. These actions are short strings like “Contact local representatives”, “Create an event”, or “Pick up a little bit of trash!”. They can be upvoted if they seem like useful courses of action or downvoted if they are completed/unnecessary/repetition of another action. 
+
+Pins
+Pins will be differentiable by a number of features: 
+Color
+Green: Environmental, like park clean ups and maintenance or trail clearing
+Yellow: Humanitarian, like a food drive, charities or a shelter with a rolling need for supplies, or a more abstract homelessness or suicide rate issue in an area. 
+Blue: Civil, To draw government attention to potholes or other infrastructure/ municipal issues, or help organize political rallies, marches, boycotts, or other events.
+Pink: Social, like a book club, free concert, library or other public gatherings
+Purple: Personnel, for events run by individuals, like a yard sale, lemonade stand or individual concerns like “Looking for someone to shovel/rake, 20$”. 
+Red: Emergency- Riots, fires, natural disaster warnings, or major long-term problems like high suicide rates on a bridge or things like the Flint water crisis. 
+On selecting emergency as the pin type, the app will recommend users contact police before doing anything else if there is immediate danger
+Users in the area will get push notifications for local emergencies. This system can be abused, so there should be some limit on it or penalty for doing so. 
+Red pins in general must be implemented very carefully. 
+White: Misc. For concerns that don’t fit in other categories
+Other possibilities: Some events, like charities, online events, political change, and widespread problems like homelessness cannot be “pinned” to a certain location, or may not fall into the above categories. Some events may also fall under multiple categories, like Civil/Environmental for a trail clearing, as you need government permission to clear or add pavement to trails in public parks. For various cases like these, additional solutions will need to be considered if they are to be handled by this application. 
+
+
+
+
+
+
+Size
+The size of a pin will change based on the amount of activity/attention it receives, as well as the number of users that have “Up-voted” it. A red pin will default to a large size. 
+
+Pinheads
+The pins will, by default, be simple colored circles, but users can unlock different pinheads that change the appearance of pins they place by contribution as tracked by the app, or possibly paying for them. 
+Eg: A green leaf or lily pad for environment, a pink ribbon for social, a wrench for civil. (There will be no red pinheads)
+Organizational accounts will have everything unlocked by default. 
+
+Animations
+A pin would “pulse” or wiggle for pins with events upcoming, within the next week.
+Confetti or other animations will symbol an event in progress
+New animations for events can be collected and chosen by organizers, similar to pinheads
+May also give users ability to buy or earn items that “boost” a concern, making it display more prominently or play some other animation
+Possibly the ability to send push notifications to advertise events/concerns, but only on a very limited bases for people or organizations that have very high ratings and participation, and they can be disabled by the user.
+
+Monetization
+Donations/About the creator tab
+Allowing users to buy animations, pinheads, or boosts to help promote pins they care about.
+Subscription or creation fee for “organization” accounts. 
+Note: Since this app is primarily designed to have a strong positive community impact, monetization should not be a primary focus. 
+
+Possible issues
+An early issue I can imagine is early users opening the app and seeing no pins at all, and in turn being less likely to make their own. I will attempt to use pre-existing databases to place a pin on every park, library, and possibly police station or other important public spaces, where there are likely to be cleanups, events, or announcements. 
+
+
+
+Another concern is political brigading, where users of opposing parties will flag political movement’s pins as spam and report them constantly, or even attempt to find out the personal information of users participating in the events. Since reports need to be handled algorithmically, it will be very difficult to defend against these spam reports, and these pins will likely be taken down. 
+
+This also ties into privacy. The app will sometimes ask users to provide contact info, which is necessary for event organizers and may be useful so that users can receive emails from event organizers automatically. However, it will warn them to be careful who they give it to, to report users who misuse their information, and warn them not to give information to low-rated users. It will also warn them not to share their home address, or host a public event at a private residence.
+
+The intended use of this app is for public concerns and events, but some users will likely mis-use it for private gatherings. Users will be prompted not to do this when creating an event, and other users will be recommended to report events like this.
+
+The app also depends somewhat on users rating one another, but low rated users will be encouraged to make new accounts. It may be wise to not differentiate between a low and regular rated user, so they do not know that their actions are low-priority and their events may have a lower threshold to be removed. It is important to recognize high-rated users so their events can be more widely trusted.
+
+Implementation
+Users, concerns, and events will be stored on a firebase database. Geohashing will be used to find pins near a user, which can be done very quickly. (One of the presenters at the google event this weekend had an hour presentation on Geohashing and linked a github project with slides explaining it, which has been and will be very useful.) I am confidant that if I can successfully create/manage/pull/store using firebase, I will be able to geohash to pull nearby events very quickly. It may be difficult to handle weighting though, and I will need to create an algorithm that takes upvotes, distance, and relevance to a user (based on similar events they care about) into account to show the best possible concerns both on the map (especially when zoomed out - imagine how many pins may appear in an area like Manhattan), and on the list of recommended concerns users will be able to see. 
+We will use google auth for authentication.
+When a user pulls up a personal page, concern, event, or another activity, it will have the controller pull up the default view for that activity, and ask the model for data that it will use to populate the activity with information. The model will do this using database queries. 
+Additional Notes
+One stretch goal will be the ability to add pictures for user icons and events/concerns. These are very useful, but based on the geohashing/firebase demonstrations I saw i’m not sure how difficult/resource intensive storing and accessing them would be.
+As always, I am probably biting off more than I can chew. This project will probably last well into winter break, or spill over into software engineering. That’s ok, i’ll learn a lot more about databases/maps/authentication/accounts/design/PoGo than I would from the textbook
