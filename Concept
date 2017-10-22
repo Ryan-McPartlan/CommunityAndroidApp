@@ -16,7 +16,7 @@ Concerns will not all be best addressed by events. Things like potholes, public 
 
 Pins
 Pins will be differentiable by a number of features: 
-Color
+Color - Type of pin
 Green: Environmental, like park clean ups and maintenance or trail clearing
 Yellow: Humanitarian, like a food drive, charities or a shelter with a rolling need for supplies, or a more abstract homelessness or suicide rate issue in an area. 
 Blue: Civil, To draw government attention to potholes or other infrastructure/ municipal issues, or help organize political rallies, marches, boycotts, or other events.
@@ -60,7 +60,7 @@ An early issue I can imagine is early users opening the app and seeing no pins a
 
 
 
-Another concern is political brigading, where users of opposing parties will flag political movement’s pins as spam and report them constantly, or even attempt to find out the personal information of users participating in the events. Since reports need to be handled algorithmically, it will be very difficult to defend against these spam reports, and these pins will likely be taken down. 
+Another concern is political brigading, where users of opposing parties will flag political movement’s pins as spam and report them constantly, or even attempt to find out the personal information of users participating in the events. Since reports need to be handled algorithmically, it will be very difficult to defend against these spam reports, and targeted pins will likely end up being taken down. One idea would be to allow organizers to associate a controversial political event with a certain alignment, left/right, and request users declare a party if they want to view these pins. Opposite alignments would be unable to report their opponents, and could be changed once a month. Pins of the opposite party will be heavily de-prioritized as well, to avoid interference.
 
 This also ties into privacy. The app will sometimes ask users to provide contact info, which is necessary for event organizers and may be useful so that users can receive emails from event organizers automatically. However, it will warn them to be careful who they give it to, to report users who misuse their information, and warn them not to give information to low-rated users. It will also warn them not to share their home address, or host a public event at a private residence.
 
@@ -68,10 +68,20 @@ The intended use of this app is for public concerns and events, but some users w
 
 The app also depends somewhat on users rating one another, but low rated users will be encouraged to make new accounts. It may be wise to not differentiate between a low and regular rated user, so they do not know that their actions are low-priority and their events may have a lower threshold to be removed. It is important to recognize high-rated users so their events can be more widely trusted.
 
+In pokemon go, there were incidents where people would place items meant to gather players in dark locations at night then rob them. The app would provide a warning to users about attending events past dark alone or in a small group, especially if there are not many other people going, or if the organizer or many attendants have a low rating. 
+
+As we previously mentioned, society's biggest problems are not tied to locations. Maybe when we zoom out, we can transition to city-wide, statewide, or nationwide pins, with recommended actions like “create local events” or “contact these representatives!”. Worldwide pins might even be a great way to discuss and address problems like the UNs 17 major goals for the next 20 years. User accounts will need higher ratings to interact with more large-scale pins, to prevent spam. 
+
+
 Implementation
 Users, concerns, and events will be stored on a firebase database. Geohashing will be used to find pins near a user, which can be done very quickly. (One of the presenters at the google event this weekend had an hour presentation on Geohashing and linked a github project with slides explaining it, which has been and will be very useful.) I am confidant that if I can successfully create/manage/pull/store using firebase, I will be able to geohash to pull nearby events very quickly. It may be difficult to handle weighting though, and I will need to create an algorithm that takes upvotes, distance, and relevance to a user (based on similar events they care about) into account to show the best possible concerns both on the map (especially when zoomed out - imagine how many pins may appear in an area like Manhattan), and on the list of recommended concerns users will be able to see. 
 We will use google auth for authentication.
 When a user pulls up a personal page, concern, event, or another activity, it will have the controller pull up the default view for that activity, and ask the model for data that it will use to populate the activity with information. The model will do this using database queries. 
-Additional Notes
+
+Above and Beyond
 One stretch goal will be the ability to add pictures for user icons and events/concerns. These are very useful, but based on the geohashing/firebase demonstrations I saw i’m not sure how difficult/resource intensive storing and accessing them would be.
+In order to address issues of tremendous scale, I might want to implement some app-wide goals and “initiatives”. These would be for things like public schools and homelessness. Choosing an initiative would change your entire map, removing pins not related to that issue and coloring regions by how significant the problem is there, and making visible special pins in the center of each city so locals can try to discuss how to address the problem on a local level. Any concern would be able to be catagorized under an initiative. This would be a very ambitious goal, and would certainly be one for later.
+
+Additional Notes
 As always, I am probably biting off more than I can chew. This project will probably last well into winter break, or spill over into software engineering. That’s ok, i’ll learn a lot more about databases/maps/authentication/accounts/design/PoGo than I would from the textbook
+
