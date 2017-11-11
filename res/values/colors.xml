@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Sign in screen-->
+    <color name = "signInBackground">#88f3ff</color>
+    <color name = "signInBackground2">#5edcea</color>
+    <color name = "titleText">#fd5b03</color>
+
+    <!--Maps screen-->
+    <color name="buttonLight">#88f3ff</color>
+    <color name="buttonLightPressed">#90c6cc</color>
+
+    <!--Popups-->
+    <color name="editTextLine">#88f3ff</color>
+    <color name="editTextCursor">#88f3ff</color>
+
+    <!--Weird defaults, cant delete-->
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+</resources>

@@ -1,0 +1,12 @@
+<resources>
+    <!--Sign in-->
+    <string name="title_text">How Can I Help?</string>
+    <string name="guest_sign_in">Sign in as guest</string>
+    <string name="app_name">HowCanIHelp</string>
+
+    <!--On the map-->
+    <string name="title_activity_maps">Map</string>
+
+
+
+</resources>
