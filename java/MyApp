@@ -1,0 +1,13 @@
+package com.thejadetower.ryan.howcanihelp;
+
+import android.app.Activity;
+
+/**
+ * Created by Ryan on 11/10/2017.
+ */
+
+public class MyApp {
+    public static MyApp app;
+
+    public MapsActivity mapsActivity;
+}
