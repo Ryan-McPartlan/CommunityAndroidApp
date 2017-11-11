@@ -1,0 +1,44 @@
+package com.thejadetower.ryan.howcanihelp;
+
+import com.google.android.gms.maps.model.LatLng;
+
+import java.util.List;
+
+/**
+ * Created by Ryan on 11/10/2017.
+ */
+
+public class Pin {
+    //Todo: make 4 sub-classes
+    public static int CONCERN = 0;
+    public static int EVENT = 1;
+    public static int QUESTION = 2;
+    public static int ALERT = 3;
+
+    public static int MISC = 0;
+    public static int ENVIRONMENTAL = 1;
+    public static int HUMANITARIAN = 2;
+    public static int CIVIL = 3;
+    public static int SOCIAL = 4;
+    public static int PERSONAL = 5;
+
+    boolean isActive;
+    int id;
+
+    LatLng location;
+    int catagorty;
+    int type;
+
+    //Pin data
+    //Todo: Keep track of user votes in a smarter way
+    int upvotes;
+    int follows;
+    int markedClear;
+    int reports;
+
+    String title;
+    String description;
+
+    List<Event> events;
+    List<Action> actions;
+}
