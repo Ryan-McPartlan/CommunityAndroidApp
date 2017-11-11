@@ -1,0 +1,16 @@
+package com.thejadetower.ryan.howcanihelp;
+
+/**
+ * Created by Ryan on 11/10/2017.
+ */
+
+public class Action {
+    boolean isActive;
+
+    //Todo: Keep track of user votes in a smarter way
+    int upvotes;
+    int following;
+    int markedClear;
+    int reports;
+    int completed;
+}
